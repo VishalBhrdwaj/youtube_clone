@@ -6,7 +6,7 @@ const SideBar = () => {
     const isMenuOpen=useSelector(store=>store.app.isMenuOpen);
     if(!isMenuOpen)return null
   return (
-    <div className='p-3 pl-6 m-3 shadow-2xl w-48'>
+    <div className='p-3 pl-6 m-3 mt-20 fixed bg-white shadow-2xl w-48'>
         <ul>
             <Link to="/"><li>Home</li></Link>
             <li>Shorts</li>

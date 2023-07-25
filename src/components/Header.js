@@ -37,7 +37,7 @@ const Header = () => {
     };
   }, [searchQuery]);
   return (
-    <div className="grid grid-flow-col shadow-lg px-3 py-3">
+    <div className="grid grid-flow-col w-full fixed bg-white shadow-lg px-3 py-3">
       <div className="flex col-span-1">
         <div>
           <img
@@ -71,7 +71,7 @@ const Header = () => {
           </button>
         </div>
         {showSuggestion && (
-          <div className="fixed bg-white w-[25rem] px-5 py-2 rounded-lg">
+          <div className=" bg-white w-[25rem] z-auto fixed px-5 py-2 rounded-lg ">
             <ul>
               {suggestions.map((suggestion, index) => {
                 return (

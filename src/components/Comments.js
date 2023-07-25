@@ -11,8 +11,7 @@ const Comments = ({comment}) => {
     /></div>
     <div>
     <div className='font-semibold text-lg'>{authorDisplayName}</div>
-    <div className=''>{textOriginal}</div>
-    {console.log(comment)} 
+    <div className='line-clamp-1'>{textOriginal}</div>
     </div>
 </div>
   )

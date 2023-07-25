@@ -7,19 +7,20 @@ import CommentContainer from "./CommentContainer";
 const WatchPage = () => {
   const dispatch = useDispatch();
   const [searchParams] = useSearchParams();
+  const videoId=searchParams.get("v");
 
   useEffect(() => {
     dispatch(closeMenu());
   }, []);
   return (
-    <div className="flex flex-col">
+    <div className="flex mt-16 flex-col">
     <div className="ml-7 mt-2">
-      <iframe
+      <iframe 
+      className="rounded-xl"
         width="900"
         height="515"
-        src={"https://www.youtube.com/embed/" + searchParams.get("v")}
+        src={"https://www.youtube.com/embed/" +videoId}
         title="YouTube video player"
-        frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen
       ></iframe>
