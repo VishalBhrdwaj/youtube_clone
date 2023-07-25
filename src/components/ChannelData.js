@@ -5,11 +5,10 @@ import { useSearchParams } from 'react-router-dom'
 const ChannelData = () => {
     const [searchParams]=useSearchParams();
     const channelData  = useFetchChannelData(searchParams.get("channelId"));
-    // const {title}=channelData.items[0].snippet.title;
-    // const {subscriberCount}=channelData.items[0].statistics;
-    console.log(channelData);
 
-  return  typeof channelData==='undefined'?"Loading":(
+    console.log(channelData.items);
+
+  return  typeof channelData.items==='undefined'?"Loading":(
     <div className="flex pb-8 w-[28rem]">
     {/* Channel Info */}
     <div className="flex">
@@ -19,9 +18,9 @@ const ChannelData = () => {
       {/* Channel NAme and subscriber count */}
       <div className="ml-4 mt-2 mr-10">
         <div className="font-semibold text-lg">
-          Title
+          { (channelData?.items[0].snippet?.title)}
         </div>
-        <div>subscriberCount k</div>
+        <div>{channelData.items[0].statistics.subscriberCount}</div>
       </div>
 
       {/* Subscribe button */}
